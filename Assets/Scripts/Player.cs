@@ -17,24 +17,24 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // ÇÃ·¹ÀÌ¾î°¡ ½ÃÀÛÇÒ ¶§ ³»°¡ ÁöÁ¤ÇÑ À§Ä¡·Î ÀÌµ¿ÇÏ¶ó.
+        // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï¶ï¿½.
         transform.position = playerStartPosition.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // ÀÔ·ÂÀ» ¹Þ¾Æ¿Í¾ß ÇÑ´Ù
+        // ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿Í¾ï¿½ ï¿½Ñ´ï¿½
         float moveInput_X = Input.GetAxisRaw("Horizontal");
         rigid.velocity = new Vector2(moveInput_X * moveSpeed, rigid.velocity.y);
 
         if(Input.GetKey(KeyCode.Space))
         {
-            rigid.velocity = new Vector2(rigid.velocity.x, 10);
+            rigid.velocity = new Vector2(rigid.velocity.x, 7);
         }
 
-        // ÀÔ·Â¿¡ ¸Â´Â ¹æÇâÀ» ¼³Á¤ÇÏ´Â ¹ý
-        // Ä³¸¯ÅÍ°¡ ¹æÇâ
-        // ½Ã°£ ¼Ó·Â ¿òÁ÷ÀÎ °Å¸®
+        // ï¿½Ô·Â¿ï¿½ ï¿½Â´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½
+        // Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½
+        // ï¿½Ã°ï¿½ ï¿½Ó·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
     }
 }
