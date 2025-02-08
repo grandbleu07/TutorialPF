@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,9 +9,12 @@ public class Player : MonoBehaviour
     public Transform playerStartPosition;
     private Rigidbody2D rigid;
 
+    ParticleSystem DarkMatter;
+
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        DarkMatter = GetComponentInChildren<ParticleSystem>();
     }
 
 
@@ -24,13 +28,22 @@ public class Player : MonoBehaviour
     void Update()
     {
         float moveInput_X = Input.GetAxisRaw("Horizontal");
-
         rigid.velocity = new Vector2(moveInput_X * moveSpeed, rigid.velocity.y);
 
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
+            CreateDarkMatter();
             rigid.velocity = new Vector2(0, 10);
         }
+
+
+
+
+    }
+
+    void CreateDarkMatter()
+    {
+        DarkMatter.Play();
     }
 }
